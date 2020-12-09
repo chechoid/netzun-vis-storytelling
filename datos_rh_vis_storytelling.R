@@ -108,8 +108,8 @@ sueldos_rubros <- encuesta %>%         # Crea un dataframe nuevo llamado sueldos
 grafico_rubros <- ggplot(sueldos_rubros,                           # Fuente de datos a graficar
                          aes(x = reorder(rubro, sueldo_promedio),  # Datos en el eje horizontal ordenados por sueldo_promedio
                                              y = sueldo_promedio)) + # Datos en el eje vertical
-  geom_col(fill = "#5B61DC")      # Tipo de gráfico y color de relleno
-+ labs(x = "", y = "") +          # Elimina nombres originales de los ejes
+  geom_col(fill = "#5B61DC") +    # Tipo de gráfico y color de relleno
+  labs(x = "", y = "") +          # Elimina nombres originales de los ejes
   # Agrega separador de miles al eje vertical
   scale_y_continuous(labels = comma_format(big.mark = ".", decimal.mark = ","))
 
